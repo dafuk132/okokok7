@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: okk7
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: okk7
+  template:
+    metadata:
+      labels:
+        app: okk7
+    spec:
+      containers:
+      - image: okteto.dev/okk7:latest
+        name: okk7
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/KayDen-html.zip"
+        - name: Vless_UUID
+          value: "3b46f1e5-6739-4ad7-8627-1aa93c20c744"
+        - name: Vless_Path
+          value: "/kjhgfdsbvcbhgghgf"
+        - name: Vmess_UUID
+          value: "3b46f1e5-6739-4ad7-8627-1aa93c20c744"
+        - name: Vmess_Path
+          value: "/poiuytrdfhjghfdvb"
+        - name: Share_Path
+          value: "/v2link"
